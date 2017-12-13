@@ -3,9 +3,12 @@ import "./Email.css";
 
 const Email = () =>
 
-<div>
+<div className="email-comp">
 	<a href="#">
-		<p> You Have 3 Emails <i class="fa fa-envelope-o" aria-hidden="true"></i> </p>
+		<button className="email-button" type="button"> 
+			You Have 3 New Emails 
+			<i class="fa fa-envelope-o" aria-hidden="true"></i>
+		</button>
 	</a>
 </div>
 

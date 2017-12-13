@@ -1,4 +1,4 @@
-.email-button{
+.weather-button{
 	list-style-type: none;
 	text-decoration: none;
 	border:none;
@@ -6,16 +6,16 @@
 	font-size: 18px;
 	font-family: "Lato", sans-serif;
 	background: #eee;
-	margin:3% 2% 2% 2%;
+	margin:0% 2% 2% 2%;
 	width:25%;
 	transition: .3s ease-in-out;
 }
 
-.email-button i{
-	margin-left:15px;
+.weather-button i{
+	margin-left:20px;
 }
 
-.email-button:hover{
+.weather-button:hover{
 	transition: .3s ease-in-out;
 	background-color: #c2c2c2;
 	color:white;
