@@ -1,19 +1,21 @@
 import React from "react";
+import "./Nav.css";
 
 const Nav = () =>
-  <nav className="navbar navbar-inverse navbar-top">
-    <div className="container-fluid">
-      <div className="navbar-header">
-        <button type="button" className="collapsed navbar-toggle">
-          <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar" /> <span className="icon-bar" />
-          <span className="icon-bar" />
-        </button>
-        <a href="/" className="navbar-brand">
-          Log In with Google
-        </a>
-      </div>
-    </div>
-  </nav>;
+
+// state = {
+//   name: 
+// }
+
+<ul class="nav justify-content-end">
+  <li class="nav-item nav-brand-name">
+      Welcome, Emma Nelson
+  </li>
+
+  <li class="nav-item nav-brand-icon">
+      E
+  </li>
+
+</ul>
 
 export default Nav;
