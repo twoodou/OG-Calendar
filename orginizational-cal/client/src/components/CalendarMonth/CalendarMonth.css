@@ -1,0 +1,80 @@
+
+.cal-here{
+  width:96%;
+  height:450px;
+  background:#eee;
+  float: right;
+}
+
+/*#app {
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.Calendar_Header {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+  padding: 10px;
+  color: #888;
+}
+
+.Calendar_Navigation {
+  text-align: right;
+}
+
+.Calendar_Day_Headers {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.Calendar_Day_Headers > div {
+  box-sizing: border-box;
+  padding: 10px;
+  color: #666;
+  font-weight: bold;
+  text-align: right;
+}
+
+.Calendar {
+  height: calc(100% - 105px);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.Calendar_Day {
+  text-align: right;
+}
+
+.Calendar_Day {
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+  padding: 10px;
+  color: #666;
+}
+
+.Calendar_Day_Weekend {
+  background: #f7f7f7;
+  color: #808080;
+}
+
+.Calendar_Day_Out_Of_Scope {
+  color: #ccc;
+}
+
+
+
+@media (max-height: 460px) {
+  .Calendar_Day {
+    border: none;
+    box-sizing: border-box;
+    padding: 3px;
+    color: #666;
+    font-size: .7rem;
+  }
+}*/

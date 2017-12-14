@@ -1,0 +1,22 @@
+.weather-button{
+	list-style-type: none;
+	text-decoration: none;
+	border:none;
+	padding: 15px 20px;
+	font-size: 18px;
+	font-family: "Lato", sans-serif;
+	background: #eee;
+	margin:0% 2% 2% 2%;
+	width:25%;
+	transition: .3s ease-in-out;
+}
+
+.weather-button i{
+	margin-left:20px;
+}
+
+.weather-button:hover{
+	transition: .3s ease-in-out;
+	background-color: #c2c2c2;
+	color:white;
+}

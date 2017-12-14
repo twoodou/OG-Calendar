@@ -1,0 +1,59 @@
+.nav{
+	background: #177263;
+}
+
+.nav-item{
+	position: relative;
+	padding:15px 5px;
+	font-family: "Lato", sans-serif;
+	color: white;
+	font-size: 20px;
+	transition: .3s ease-in-out;
+}
+
+.nav-weather{
+	margin:.2% 39% -2% 2%;
+	font-size: 17px;
+}
+
+.nav-weather a{
+	text-decoration: none;
+	list-style-type: none;
+	color: white;
+	transition: .3s ease-in-out;
+}
+
+.nav-weather a:hover{
+	color:#333;
+	transition: .3s ease-in-out;
+}
+
+.nav-weather i{
+	margin-left:5px;
+	font-size: 15px;
+}
+
+.nav-brand-icon {
+	background: #eee;
+	border-radius: 50%;
+	border:none;
+	color: #177263;
+	background: white;
+	padding:5px 13.5px;
+	margin:1%;
+}
+
+.nav-underline{
+	height:5px;
+	background: #52c0a7;
+}
+
+.nav-triangle{
+	margin-left: 10%;
+	width: 0; 
+  	height: 0; 
+  	border-left: 10px solid transparent;
+  	border-right: 10px solid transparent;
+  	border-top: 10px solid #52c0a7;
+}
+
