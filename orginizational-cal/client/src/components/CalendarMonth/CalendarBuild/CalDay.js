@@ -1,9 +1,9 @@
 import React from "react";
-import { format, formatDistance, formatRelative, subDays } from 'date-fns';
+import { dateFns, format, formatDistance, formatRelative, subDays } from 'date-fns';
 
 
 
-const Day = (props) => {
+const CalDay = (props) => {
  const classes = ['Calendar_Day']
  
  if (dateFns.isWeekend(props.date)) {
