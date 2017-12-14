@@ -23,7 +23,7 @@ require('./config/passport/passport.js')(passport);
 // Add routes, both API and view
 require("./routes/htmlRoutes.js")(app);
 require("./routes/authRoutes.js")(app, passport);
-//require("./routes/api-routes.js")(app);
+require("./routes/apiRoutes.js")(app);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
