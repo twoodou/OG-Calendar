@@ -1,10 +1,14 @@
-// import React from "react";
-// import "./CalendarMonth.css";
+import React from "react";
+import "./CalendarMonth.css";
 // import { dateFns, format, formatDistance, formatRelative, subDays } from 'date-fns';
 
+// THERE IS CODE AT THE BOTTOM BEING RENDERED 
 
 
-// // const CalendarMonth = props => (
+
+
+
+// const CalendarMonth = props => (
 // //   <CalDay />
 // // );
 
@@ -137,11 +141,15 @@
 // //   }
 // // }
 
-// // export default Calendar;
+
+const CalendarMonth = () =>
+
+<div className="cal-here">
+
+</div>
+
+export default CalendarMonth;
 
 
 
-
-
-// // ReactDOM.render(<Calendar/>, document.getElementById('app'))
 

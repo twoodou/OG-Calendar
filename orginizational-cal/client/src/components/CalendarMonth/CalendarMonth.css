@@ -1,4 +1,12 @@
-#app {
+
+.cal-here{
+  width:96%;
+  height:450px;
+  background:#eee;
+  float: right;
+}
+
+/*#app {
   position: fixed;
   top:0;
   left: 0;
@@ -69,4 +77,4 @@
     color: #666;
     font-size: .7rem;
   }
-}
+}*/
