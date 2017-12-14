@@ -23,8 +23,17 @@ const Nav = () =>
         Welcome, Emma Nelson
     </li>
 
-    <li className="nav-item nav-brand-icon">
-        E
+    <li className="nav-item nav-brand">
+        <button className="nav-brand-icon" type="button">
+          E
+        </button>
+        <div className="modal">
+          <div className="modal-triangle"> </div>
+          <div className="modal-content">
+            <p>Some text in the Modal..</p>
+          </div>
+        </div>
+
     </li>
   </ul>
 
