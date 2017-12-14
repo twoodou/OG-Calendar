@@ -9,7 +9,24 @@ const userSchema = new Schema({
 		token: String,
 		email: String,
 		name: String
-	},
+	}, 
+	facebook: {
+        id: String,
+        token: String,
+        email: String,
+        name: String
+    },
+    twitter: {
+        id: String,
+        token: String,
+        displayName: String,
+        username: String
+    },
+    linkedin: {
+        id: String,
+        token: String,
+        displayName: String
+    },
 	date: { type: Date, default: Date.now }
 });
 

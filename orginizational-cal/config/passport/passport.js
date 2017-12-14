@@ -1,12 +1,12 @@
 var bCrypt = require('bcrypt-nodejs');
 
-module.exports = function(passport) {
+module.exports = function(app, passport) {
 
     var User = require('../../models/user');
 
     var GoogleStrat = require('passport-google-oauth20').Strategy;
-    // var LinkedInStrategy = require('passport-linkedin').Strategy;
-    // var TwitterStrategy = require('passport-twitter').Strategy;
+    var LinkedInStrat = require('passport-linkedin').Strategy;
+    var TwitterStrat = require('passport-twitter').Strategy;
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
@@ -24,7 +24,7 @@ module.exports = function(passport) {
     passport.use(new GoogleStrat({
         clientID: "368397746508-4kj26rurvv18sgt2at6g89493q3jbi9q.apps.googleusercontent.com",
         clientSecret: "SAIPIsGxN7yV10LVdV6hYcp4",
-        callbackURL: "http://localhost:3001/auth/google/dash",
+        callbackURL: "http://127.0.0.1:3001/auth/google/dash",
         passReqToCallback : true
     }, function(req, token, refreshToken, profile, done){
         process.nextTick(function(){
@@ -83,86 +83,81 @@ module.exports = function(passport) {
             }
         });
     }));
-
-
-
-    //     process.nextTick(function(){
-    //         if(!req.user){
-    //             User.findOne({'google.id': profile.id}, function(err, user){
-    //                 if(err){
-    //                     return done(err);
-    //                 }
-    //                 if(user){
-    //                     if(!user.google.token){
-    //                         user.google.token = token;
-    //                         user.google.name = profile.displayName;
-    //                         user.google.email = profile.emails[0].value;
-
-    //                         user.save(function(err){
-    //                             if(err){
-    //                                 throw err;
-    //                             }
-    //                             return done(null, user)
-    //                         });
-    //                     }
-    //                     return done(null, user);
-    //                 } else {
-    //                     var newUser = new User();
-
-    //                     newUser.google.id    = profile.id;
-    //                     newUser.google.token = token;
-    //                     newUser.google.name  = profile.displayName;
-    //                     newUser.google.email = profile.emails[0].value; // pull the first email
-
-    //                     newUser.save(function(err) {
-    //                         if (err){
-    //                             throw err;
-    //                         }
-    //                         return done(null, newUser);
-    //                     });
-    //                 }
-    //             });
-    //         } else {
-    //             // user already exists and is logged in, we have to link accounts
-    //             var user = req.user; // pull the user out of the session
-
-    //             user.google.id = profile.id;
-    //             user.google.token = token;
-    //             user.google.name = profile.displayName;
-    //             user.google.email = profile.emails[0].value; // pull the first email
-
-    //             user.save(function(err) {
-    //                 if (err){
-    //                     throw err;
-    //                 }
-    //                 return done(null, user);
-    //             });
-    //         }
-    //     });
-    // }));
     
 
-    // passport.use(new LinkedInStrategy(
-    //     {
-    //         consumerKey: "783z1oywc0jy2o",
-    //         consumerSecret: "bq5dR1M0uUIkH5tG",
-    //         callbackURL: "http://127.0.0.1:8080/auth/linkedin/callback"
-    //     }, function(token, tokenSecret, profile, done) {
-    //         User.findOrCreate({linkedInId: profile.id}, function(err, user) {
-    //             return done(err, user);
-    //         });
-    //     }
-    // ));
+    passport.use(new LinkedInStrat({
+            consumerKey: "77v58mkw7yz9j9",
+            consumerSecret: "2GZ4xZuHLGHcMhND",
+            callbackURL: "http://127.0.0.1:3001/auth/linkedin/dash",
+            passReqToCallback: true
+        }, function(req, token, tokenSecret, profile, done){
+            //console.log(req.user);
+            console.log(profile);
+            process.nextTick(function() {
+                if(req.user){
+                    User.findById(req.user._id, function(err, usr){
+                        if(err){
+                            return done(err);
+                        }
+                        if(usr){
+                            if(!usr.linkedin.id){
+                                usr.linkedin.id = profile.id;
+                                usr.linkedin.token = token;
+                                usr.linkedin.displayName = profile.displayName;
 
-    // passport.use(new TwitterStrategy(
-    //     {
-    //         consumerKey: "YgNA0vp4PXf3PGzaQDFFlkTec",
-    //         consumerSecret: "dnisE91uTXPn4wvuin1SsLixjL6Y6RQI0W36u0nfmu65dZgCF9",
-    //         callbackURL: "http://127.0.0.1:8080/auth/twitter/callback"
-    //     }, function(token, tokenSecret, profile, done){
-    //         User.findOrCreate({twitterId: profile.id}, function(err, user){
-    //             return done(err, user);
-    //         });
-    //     }
-    // ));
+
+                                usr.save(function(error){
+                                    if(error){
+                                        throw error;
+                                    }
+                                    return done(null, usr);
+                                });
+                            } 
+                        }
+                        return done(null, usr);
+                    });
+                }else{
+                    return done("Error: no user exists, signup then login with Google");
+                }
+            });
+        }
+    ));
+
+    passport.use(new TwitterStrat({
+            consumerKey: "Cen815VuzCzhgjGayrhKiP4To",
+            consumerSecret: "OvyfrKZ7vFsxgpIAeg2YtFhhGyvxzQ8XLb9XIrfwvnNuVr0ubo",
+            callbackURL: "http://127.0.0.1:3001/auth/twitter/dash",
+            passReqToCallback: true
+        }, function(req, token, tokenSecret, profile, done){
+            //console.log(req.user);
+            process.nextTick(function() {
+                if(req.user){
+                    User.findById(req.user._id, function(err, usr){
+                        if(err){
+                            return done(err);
+                        }
+                        if(usr){
+                            if(!usr.twitter.id){
+                                usr.twitter.id = profile.id;
+                                usr.twitter.token = token;
+                                usr.twitter.username = profile.username;
+                                usr.twitter.displayName = profile.displayName;
+
+
+                                usr.save(function(error){
+                                    if(error){
+                                        throw error;
+                                    }
+                                    return done(null, usr);
+                                });
+                            } 
+                        }
+                        return done(null, usr);
+                    });
+                }else{
+                    return done("Error: no user exists, signup then login with Google");
+                }
+            });
+        }
+    ));
 }
