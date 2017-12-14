@@ -1,0 +1,25 @@
+.email-button{
+	list-style-type: none;
+	text-decoration: none;
+	border:none;
+	color:white;
+	padding: 15px 20px;
+	font-size: 18px;
+	font-family: "Lato", sans-serif;
+	background: #8a8a8a ;
+	width:100%;
+	margin:0 2% 2% 2%;
+	transition: .3s ease-in-out;
+}
+
+.email-button i{
+	margin-left:15px;
+}
+
+.email-button:hover{
+	transition: .3s ease-in-out;
+	background-color: #5e5e5e;
+	color:white;
+	border-left:7px solid #52c0a7;
+	cursor: pointer;
+}

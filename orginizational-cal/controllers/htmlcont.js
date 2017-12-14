@@ -4,8 +4,11 @@ module.exports = {
   home: function(req, res) {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
   },
+
+  //changed this directory from client/build/dash.html
+  
   dash: function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/build/dash.html'));
+    res.sendFile(path.join(__dirname, '../client/public/index.html'));
   }
   // ,
   // corForm: function(req, res) {
