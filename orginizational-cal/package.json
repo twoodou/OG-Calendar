@@ -52,7 +52,7 @@
     "passport-google-oauth": "^1.0.0",
     "passport-google-oauth20": "^1.0.0",
     "passport-linkedin": "^1.0.0",
-    "passport-twitter": "^1.0.4"
+    "passport-twitter": "^1.0.4",
     "postcss-loader": "^2.0.9",
     "react-app": "^1.1.2",
     "react-dev-utils": "^4.2.1",
@@ -60,5 +60,5 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
-  }
+    }
 }
