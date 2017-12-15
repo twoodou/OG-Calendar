@@ -7,7 +7,7 @@ module.exports = function(app, passport) {
 
 	app.get('/auth/google/dash', passport.authenticate('google', 
 		{
-			successRedirect: '/dash',
+			successRedirect: '/',
 			failureRedirect: '/'
 		}
 	));
@@ -16,12 +16,17 @@ module.exports = function(app, passport) {
 
 	app.get('/auth/twitter/dash', passport.authenticate('twitter', 
 		{
-			successRedirect: '/dash',
+			successRedirect: '/',
 			failureRedirect: '/'
 		}
 	));
 
 	app.get('/auth/session', function(req, res){
+		if(!req.user){
+			res.json({});
+		}else {
+			res.body(req.user);
+		}
 		console.log(req.user);
 	})
 
@@ -29,7 +34,7 @@ module.exports = function(app, passport) {
 
 	app.get('/auth/facebook/dash', passport.authorize('facebook', 
 		{
-			successRedirect: '/dash',
+			successRedirect: '/',
 			failureRedirect: '/'
 		}
 	));
@@ -38,7 +43,7 @@ module.exports = function(app, passport) {
 
 	app.get('/auth/linkedin/dash', passport.authenticate('linkedin', 
 		{
-			successRedirect: '/dash',
+			successRedirect: '/',
 			failureRedirect: '/'
 		}
 	));
