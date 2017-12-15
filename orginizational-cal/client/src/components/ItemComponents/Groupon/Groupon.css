@@ -1,15 +1,17 @@
 
 /* Icon Div Settings */
-.email-div i{
+.groupon-div i{
 	background: #177263;
-	padding:12px 12px 13.5px 12px;
+	padding:12px 12px 13.9px 12px;
 	color:white;
 	font-size: 25px;
+	margin-top: 6%;
 	transition: .3s ease-in-out;
 }
 
 /* Main Button Title #eee */
-.email-btn{
+.groupon-btn{
+	position: relative;
 	list-style-type: none;
 	text-decoration: none;
 	border:none;
@@ -26,11 +28,11 @@
 }
 
 /* On Hover Functions */
-.email-div:hover i {
+.groupon-div:hover i {
 	background: #52c0a7;
 	transition: .3s ease-in-out;
 }
 
-.email-div:hover .email-btn{
+.groupon-div:hover .groupon-btn{
 	border-left: 5px solid #177263;
 }

@@ -1,0 +1,27 @@
+/* general */
+.nav-weather{
+	padding:12px 5px;
+	font-family: "Lato", sans-serif;
+	color: white;
+	width:100%;
+	margin-top: 2.5%;
+	transition: .3s ease-in-out;
+	font-size: 18px;
+}
+
+.nav-weather a{
+	text-decoration: none;
+	list-style-type: none;
+	color: white;
+	transition: .3s ease-in-out;
+}
+
+.nav-weather a:hover{
+	color:#52c0a7;
+	transition: .3s ease-in-out;
+}
+
+.nav-weather i{
+	margin-left:5px;
+	font-size: 15px;
+}
