@@ -1,20 +1,38 @@
-.reminder-button{
-	list-style-type: none;
-	text-decoration: none;
-	border:none;
+
+/* Icon Div Settings */
+.reminder-div i{
+	background: #177263;
+	padding:12px 12px 13.6px 12px;
 	color:white;
-	padding: 15px 0;
-	font-size: 18px;
-	font-family: "Lato", sans-serif;
-	background: #8a8a8a ;
-	margin:2% 2% 2% 2%;
-	width:100%;
+	font-size: 25px;
+	margin-top:6%;
 	transition: .3s ease-in-out;
 }
 
-.reminder-button:hover{
+/* Main Button Title #eee */
+.reminder-btn{
+	list-style-type: none;
+	text-decoration: none;
+	border:none;
+	color:#177263;
+	text-transform: uppercase;
+	padding: 10.9px 20px;
+	text-align: left;
+	font-size: 19.5px;
+	margin-top: 4%;
+	font-family: "Lato", sans-serif;
+	background: #eee;
+	border-left: 5px solid #52c0a7;
+	width:80%;
 	transition: .3s ease-in-out;
-	background-color:#5e5e5e;
-	cursor: pointer;
-	border-left:7px solid #52c0a7;
+}
+
+/* On Hover Functions */
+.reminder-div:hover i {
+	background: #52c0a7;
+	transition: .3s ease-in-out;
+}
+
+.reminder-div:hover .reminder-btn{
+	border-left: 5px solid #177263;
 }

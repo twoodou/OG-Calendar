@@ -7,7 +7,7 @@ import Calendar from "./CalendarBuild/Calendar";
 
 const CalendarMonth = () =>
 
-	<div className="cal-here">
+	<div className="cal-div">
 		<Calendar />
 	</div>
 

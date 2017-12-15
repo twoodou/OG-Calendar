@@ -2,39 +2,37 @@ import React from "react";
 import "./Nav.css";
 import moment from "moment";
 
+import NavTime from "./NavBuild/NavTime/NavTime.js";
+import NavWeather from "./NavBuild/NavWeather/NavWeather.js";
+import NavName from "./NavBuild/NavName/NavName.js";
+import NavIcon from "./NavBuild/NavIcon/NavIcon.js";
+
+
 const Nav = () => 
 
-// state = {
-//   name: 
-// }
 <div>
-  <ul className="nav justify-content-end">
-    <li className="nav-item nav-item-left nav-time">
-        { moment().format('LT') }
+
+  <ul class="nav left-nav">
+    <li class="nav-item navbar-time">
+      <NavTime />
     </li>
 
-    <li className="nav-item nav-item-left nav-weather">
-    	<a href="https://www.google.com/search?ei=FnMxWqH-DYeejwOu366YDQ&q=weather&oq=weat&gs_l=psy-ab.1.0.0i131i67k1j0j0i67k1l2j0i131k1j0i131i67k1l3j0i67k1j0i131k1.216008.217106.0.219056.4.4.0.0.0.0.194.544.0j4.4.0....0...1.1.64.psy-ab..0.4.543...0i3k1.0.yXFc_B3j7lA" target="_blank">
-        <p> Weather In Austin, TX  || <i class="fa fa-sun-o" aria-hidden="true"></i> 65 &#8457; </p>
-      </a>
+    <li class="nav-item navbar-weather">
+      <NavWeather />
+    </li>
+  </ul>
+
+
+  <ul className="nav justify-content-end right-nav">
+
+    <li className="nav-item navbar-name">
+      <NavName />
     </li>
 
-    <li className="nav-item nav-brand-name">
-        Welcome, Emma Nelson
+    <li className="nav-item navbar-icon">
+      <NavIcon />
     </li>
 
-    <li className="nav-item nav-brand">
-        <button className="nav-brand-icon" type="button">
-          E
-        </button>
-        <div className="modal">
-          <div className="modal-triangle"> </div>
-          <div className="modal-content">
-            <p>Some text in the Modal..</p>
-          </div>
-        </div>
-
-    </li>
   </ul>
 
   <div className="nav-underline"> </div>
