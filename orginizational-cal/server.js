@@ -33,6 +33,7 @@ require('./config/passport/passport.js')(app, passport);
 require("./routes/htmlRoutes.js")(app);
 require("./routes/authRoutes.js")(app, passport);
 require("./routes/apiRoutes.js")(app);
+// require("./routes/api/meetup.js")(app);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
