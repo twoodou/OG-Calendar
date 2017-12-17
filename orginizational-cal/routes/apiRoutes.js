@@ -1,3 +1,4 @@
+const router = require("express").Router();
 var apiCont = require('../controllers/apicont.js');
 
 var fields = "tech";
@@ -9,4 +10,5 @@ module.exports = function(app) {
   app.get('/test', apiCont.test);
 
   app.get("/api/meetups/:id", apiCont.getMeetupEvents);
+  // app.post("/api/meetups/:id", apiCont.getMeetupEvents);
 };
