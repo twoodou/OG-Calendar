@@ -25,7 +25,7 @@ module.exports = function(app, passport) {
 		if(!req.user){
 			res.json({});
 		}else {
-			res.body(req.user);
+			res.send(req.user);
 		}
 		console.log(req.user);
 	})

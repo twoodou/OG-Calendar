@@ -3,6 +3,7 @@ var bCrypt = require('bcrypt-nodejs');
 module.exports = function(app, passport) {
 
     var User = require('../../models/user');
+    var Data = require('../../models/data');
 
     var GoogleStrat = require('passport-google-oauth20').Strategy;
     var LinkedInStrat = require('passport-linkedin').Strategy;
@@ -89,10 +90,12 @@ module.exports = function(app, passport) {
             consumerKey: "77v58mkw7yz9j9",
             consumerSecret: "2GZ4xZuHLGHcMhND",
             callbackURL: "http://127.0.0.1:3001/auth/linkedin/dash",
-            passReqToCallback: true
+            passReqToCallback: true,
+            profileFields: ['id', 'first-name', 'last-name', 'formatted-name', 'location', 'industry', 'current-share', 'summary', 'specialties', 'positions', 'api-standard-profile-request', 'public-profile-url', 'email-address', 'headline']
         }, function(req, token, tokenSecret, profile, done){
             //console.log(req.user);
             console.log(profile);
+            //yarn console.log(req);
             process.nextTick(function() {
                 if(req.user){
                     User.findById(req.user._id, function(err, usr){
@@ -104,6 +107,7 @@ module.exports = function(app, passport) {
                                 usr.linkedin.id = profile.id;
                                 usr.linkedin.token = token;
                                 usr.linkedin.displayName = profile.displayName;
+                                usr.linkedin.profile = JSON.stringify(profile._json);
 
 
                                 usr.save(function(error){
@@ -112,7 +116,7 @@ module.exports = function(app, passport) {
                                     }
                                     return done(null, usr);
                                 });
-                            } 
+                            }
                         }
                         return done(null, usr);
                     });

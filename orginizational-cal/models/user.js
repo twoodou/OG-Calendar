@@ -20,13 +20,20 @@ const userSchema = new Schema({
         id: String,
         token: String,
         displayName: String,
-        username: String
+        username: String,
+        twits: String
     },
     linkedin: {
         id: String,
         token: String,
-        displayName: String
+        displayName: String,
+        profile: String,
+        public_page: String
     },
+    meetupEvents: {type: Array},
+    googleEvents: {type: Array},
+    location: {type: String},
+    places: {type: String},
 	date: { type: Date, default: Date.now }
 });
 

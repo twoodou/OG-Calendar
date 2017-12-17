@@ -2,7 +2,9 @@ var apiCont = require('../controllers/apicont.js');
 module.exports = function(app) {
 	app.get('/test', apiCont.test);
 	app.get('/api/meetups/:id', apiCont.getMeetupEvents);
-	app.get('api/getTwits', apiCont.getTwits);
+	app.get('/api/getTwits/:id', apiCont.getTwits);
+	app.get('/api/getLink/:id', apiCont.getLink);
+	app.get('/api/fullSearch', apiCont.getFullSearch);
 	function runWatson(id, watsonInput) {
       var PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 
