@@ -5,6 +5,7 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Email from "./components/ItemComponents/Email";
 import Reminder from "./components/ItemComponents/Reminder";
+import Groupon from "./components/ItemComponents/Groupon";
 import CalendarMonth from "./components/CalendarMonth";
 
 
@@ -13,10 +14,11 @@ const App = () =>
     <div>
       <Nav />
       <div className="container">
-		  <div className="row">
+		  <div className="row main-div">
 		    <div className="col-sm-4">
 		      	<Email />
 		      	<Reminder />
+		      	<Groupon />
 		    </div>
 		    <div className="col-sm-8">
 		      	<CalendarMonth />

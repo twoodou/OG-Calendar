@@ -5,10 +5,12 @@ const Email = () =>
 
 <div className="email-comp">
 	<a href="#">
-		<button className="email-button" type="button"> 
-			You Have 3 New Emails 
+		<div className="email-div">
 			<i class="fa fa-envelope-o" aria-hidden="true"></i>
-		</button>
+			<button className="email-btn" type="button"> 
+				3 New Emails
+			</button>
+		</div>
 	</a>
 </div>
 
