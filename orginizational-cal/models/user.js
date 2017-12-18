@@ -9,7 +9,7 @@ const userSchema = new Schema({
 		token: String,
 		email: String,
 		name: String
-	}, 
+	},
 	facebook: {
         id: String,
         token: String,
@@ -32,9 +32,15 @@ const userSchema = new Schema({
     },
     meetupEvents: {type: Array},
     googleEvents: {type: Array},
-    location: {type: String},
+	watson: {
+		input: String,
+		results: String
+	},
+	location: {type: String},
     places: {type: String},
-	date: { type: Date, default: Date.now }
+	upcomingEvents: {type: String},
+    date: { type: Date, default: Date.now },
+    
 });
 
 // generating a hash

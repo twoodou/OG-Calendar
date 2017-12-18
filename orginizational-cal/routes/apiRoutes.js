@@ -1,3 +1,4 @@
+const router = require("express").Router();
 var apiCont = require('../controllers/apicont.js');
 module.exports = function(app) {
 	app.get('/test', apiCont.test);
@@ -5,6 +6,8 @@ module.exports = function(app) {
 	app.get('/api/getTwits/:id', apiCont.getTwits);
 	app.get('/api/getLink/:id', apiCont.getLink);
 	app.get('/api/fullSearch', apiCont.getFullSearch);
+	app.get("/api/meetups/:id", apiCont.getMeetupEvents);
+  	// app.post("/api/meetups/:id", apiCont.getMeetupEvents);
 	function runWatson(id, watsonInput) {
       var PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 
