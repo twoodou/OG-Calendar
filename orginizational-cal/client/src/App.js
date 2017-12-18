@@ -1,30 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 
-import Nav from "./components/Nav";
-import Email from "./components/ItemComponents/Email";
-import Reminder from "./components/ItemComponents/Reminder";
-import Groupon from "./components/ItemComponents/Groupon";
-import CalendarMonth from "./components/CalendarMonth";
+//import StaticNav from "./components/StaticNav/StaticNav.js";
+import index from "./pages/index.js";
+import calendar from "./pages/calendar.js";
 
 
 const App = () =>
   <Router>
     <div>
-      <Nav />
-      <div className="container">
-		  <div className="row main-div">
-		    <div className="col-sm-4">
-		      	<Email />
-		      	<Reminder />
-		      	<Groupon />
-		    </div>
-		    <div className="col-sm-8">
-		      	<CalendarMonth />
-		    </div>
-		  </div>
-		</div>
+        <Route exact path="/" component={index} />
+        <Route exact path="/index" component={index} />
+        <Route exact path="/calendar" component={calendar} />
     </div>
   </Router>;
 

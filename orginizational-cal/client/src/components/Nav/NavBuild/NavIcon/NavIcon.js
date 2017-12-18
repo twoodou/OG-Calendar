@@ -1,19 +1,44 @@
-import React from "react";
+import React, {Component} from "react";
 import "./NavIcon.css";
 
 
-const NavIcon = () => 
-	<div className="nav-icon"> 
- 		<button className="nav-brand-icon" type="button">
-          E
-        </button>
-        <div className="modal">
-        	<div className="modal-triangle"> </div>
-        	<div className="modal-content">
-            	<p>Some text in the Modal..</p>
-          	</div>
-       	</div>
+const Modal = ({ show, hide }) => (
+  <div style={{ display: show ? 'block' : 'none' }} className='menu-pnl pnl'>
+    <p> fuck yes </p>
+  </div>
+)
 
- 	</div>
+class NavIcon extends React.Component {
+  constructor() {
+    super()
+    this.state = { displayModal: false }
+    this.handleModalDisplay = this.handleModalDisplay.bind(this)
+  }
+  handleModalDisplay(e) {
+    e.preventDefault()
+    this.setState({ displayModal: !this.state.displayModal })
+  }
+  render() {
+    const display = this.state.displayModal.toString()
+    return (
+
+		<div className="nav-icon" onClick= {this.handleOpenModal} > 
+			<a onClick={this.handleModalDisplay}>
+
+		 		<button className="nav-brand-icon" type="button">
+		          E
+		        </button>
+		 	</a>
+
+			<Modal className="menu-pnl pnl" show={this.state.displayModal} hide={this.handleModalDisplay} />
+		</div>
+
+    )
+  }
+}
+
+
 
 export default NavIcon;
+
+
