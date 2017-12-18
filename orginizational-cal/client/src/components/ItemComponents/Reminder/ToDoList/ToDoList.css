@@ -1,0 +1,63 @@
+
+/* to do list title */
+.to-do-list h1{
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 17px;
+}
+
+/* input field */
+.to-do-list input{
+  border:none;
+  width:71%;
+  padding:10px;
+}
+
+/* add new item btn */
+.to-do-list .add-btn{
+  border:none;
+  padding: 11px;
+  font-size: 15px;
+  color:#52c0a7;
+  transition: .2s ease-in-out;
+}
+
+.to-do-list button:hover{
+  color:#177263 ;
+  transition: .2s ease-in-out;
+  cursor: pointer;
+}
+
+/* to do items styling */
+.item h2{
+  font-size: 18px;
+  margin-top:15px;
+  width:100%;
+  padding:10px;
+  margin-left: -10%;
+  background: white;
+  text-align: left;
+  text-transform: lowercase;
+}
+
+/* delete item btn */
+.item .delete-btn{
+  border:none;
+  padding-top: 2px;
+  font-size: 15px;
+  color:#177263;
+  transition: .2s ease-in-out;
+  background-color: none;
+  float: right;
+  margin-top:-20%;
+  margin-right:12%;
+}
+
+
+
+
+
+
+
+
+
