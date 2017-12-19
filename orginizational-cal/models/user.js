@@ -7,6 +7,7 @@ const userSchema = new Schema({
 	google: {
 		id: String,
 		token: String,
+        ref_token: String,
 		email: String,
 		name: String
 	},
