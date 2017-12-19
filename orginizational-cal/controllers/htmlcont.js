@@ -8,7 +8,7 @@ module.exports = {
   //changed this directory from client/build/dash.html
   
   dash: function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/public/index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/dash.html'));
   }
   // ,
   // corForm: function(req, res) {

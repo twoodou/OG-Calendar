@@ -3,6 +3,8 @@ import moment from 'moment';
 import Week from "./Week.js";
 import Day from "./Day.js";
 import DayNames from "./DayNames.js";
+// import CalendarDay from "../../CalendarDay/CalendarDay.js";
+
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -81,6 +83,7 @@ class Calendar extends React.Component {
 
     return <span className="month-label">{month.format("MMMM YYYY")}</span>;
   }
+
 
   render() {
     return (
