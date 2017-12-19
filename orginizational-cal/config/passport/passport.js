@@ -3,7 +3,6 @@ var bCrypt = require('bcrypt-nodejs');
 module.exports = function(app, passport) {
 
     var User = require('../../models/user');
-    var Data = require('../../models/data');
 
     var GoogleStrat = require('passport-google-oauth20').Strategy;
     var LinkedInStrat = require('passport-linkedin').Strategy;
@@ -95,7 +94,11 @@ module.exports = function(app, passport) {
         }, function(req, token, tokenSecret, profile, done){
             //console.log(req.user);
             console.log(profile);
-            //yarn console.log(req);
+            console.log("+++++++++++++++++");
+            console.log(token);
+            console.log("+++++++++++++++++");
+            console.log(tokenSecret);
+
             process.nextTick(function() {
                 if(req.user){
                     User.findById(req.user._id, function(err, usr){
@@ -103,20 +106,17 @@ module.exports = function(app, passport) {
                             return done(err);
                         }
                         if(usr){
-                            if(!usr.linkedin.id){
-                                usr.linkedin.id = profile.id;
-                                usr.linkedin.token = token;
-                                usr.linkedin.displayName = profile.displayName;
-                                usr.linkedin.profile = JSON.stringify(profile._json);
+                            usr.linkedin.id = profile.id;
+                            usr.linkedin.token = token;
+                            usr.linkedin.displayName = profile.displayName;
+                            usr.linkedin.profile = JSON.stringify(profile._json);
 
-
-                                usr.save(function(error){
-                                    if(error){
-                                        throw error;
-                                    }
-                                    return done(null, usr);
-                                });
-                            }
+                            usr.save(function(error){
+                                if(error){
+                                    throw error;
+                                }
+                                return done(null, usr);
+                            });
                         }
                         return done(null, usr);
                     });
@@ -141,20 +141,18 @@ module.exports = function(app, passport) {
                             return done(err);
                         }
                         if(usr){
-                            if(!usr.twitter.id){
-                                usr.twitter.id = profile.id;
-                                usr.twitter.token = token;
-                                usr.twitter.username = profile.username;
-                                usr.twitter.displayName = profile.displayName;
+                            usr.twitter.id = profile.id;
+                            usr.twitter.token = token;
+                            usr.twitter.username = profile.username;
+                            usr.twitter.displayName = profile.displayName;
 
 
-                                usr.save(function(error){
-                                    if(error){
-                                        throw error;
-                                    }
-                                    return done(null, usr);
-                                });
-                            } 
+                            usr.save(function(error){
+                                if(error){
+                                    throw error;
+                                }
+                                return done(null, usr);
+                            });
                         }
                         return done(null, usr);
                     });

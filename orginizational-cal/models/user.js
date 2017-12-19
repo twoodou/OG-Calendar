@@ -30,7 +30,7 @@ const userSchema = new Schema({
         profile: String,
         public_page: String
     },
-    meetupEvents: {type: Array},
+    meetupEvents: String,
     googleEvents: {type: Array},
 	watson: {
 		input: String,
