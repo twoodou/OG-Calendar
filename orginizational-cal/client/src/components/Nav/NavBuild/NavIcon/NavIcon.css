@@ -3,9 +3,9 @@
 	background: #eee;
 	border-radius: 50%;
 	border:none;
-	color: #177263;
+	color: #333;
 	background: white;
-	padding:5px 13px;
+	padding:6px 13px;
 	transition: .3s ease-in-out;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .nav-brand-icon:hover, .nav-brand-icon:active{
-	background: #52c0a7;
+	background: #bbb;
 	color: white;
 	transition: .3s ease-in-out;
 	cursor: pointer;

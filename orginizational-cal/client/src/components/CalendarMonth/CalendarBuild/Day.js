@@ -20,7 +20,7 @@ class Day extends React.Component {
       <span 
         key={date.toString()} 
         className={"day" + (isToday ? " today" : "") + (isCurrentMonth ? "" : " different-month") + (date.isSame(selected) ? " selected" : "")} 
-        onClick={()=>select(day)}>{number}</span>
+        onClick={() =>select(day)}>{number}</span>
     );
   }
 }

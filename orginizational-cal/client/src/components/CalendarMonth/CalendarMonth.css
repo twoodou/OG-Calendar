@@ -48,7 +48,7 @@
 .calendar header .month-display {
   align-items: center;
   height: 50px;
-  background: #177263;
+  background: #333;
 }
 
 .calendar header .month-label {
@@ -69,7 +69,7 @@
 }
 
 .calendar header .arrow:hover {
-  background: #52c0a7;
+  background: #bbb;
   transition: .2s ease-in-out;
 
 }
@@ -79,7 +79,7 @@
   height:5px;
   width:100%;
   margin-left: -2%;
-  background: #52c0a7;
+  background: #bbb;
 }
 
 /* Cal Week */
@@ -93,7 +93,7 @@
 
 /* Cal Day Names */
 .calendar .day-names {
-  color: #177263;
+  color: #333;
   font-weight: bold;
   cursor: default;
   font-size: 1.2rem;
@@ -105,7 +105,7 @@
 
 .calendar .day-names .day:hover {
   background: inherit;
-  color:#177263;
+  color:#333;
 }
 
 /* Cal Number Days */
@@ -122,7 +122,7 @@
 }
 
 .calendar .day:hover {
-  background: #177263;
+  background: #bbb;
   color:white;
   transition: .2s ease-in-out;
 }
@@ -135,7 +135,7 @@
 
 /* Current Day Settings */
 .calendar .day.today {
-  background: #52c0a7;
+  background: #bbb;
   color:white;
 }
 
@@ -144,6 +144,6 @@
 }
 
 .calendar .day.selected {
-  background: #177263;
+  background: #333;
   color: white;
 }
