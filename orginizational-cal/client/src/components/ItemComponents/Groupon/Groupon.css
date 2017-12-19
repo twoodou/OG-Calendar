@@ -1,7 +1,7 @@
 
 /* Icon Div Settings */
 .groupon-div i{
-	background: #177263;
+	background: #333;
 	padding:12px 12px 13.9px 12px;
 	color:white;
 	font-size: 25px;
@@ -15,38 +15,38 @@
 	list-style-type: none;
 	text-decoration: none;
 	border:none;
-	color:#177263;
+	color:#333;
 	text-transform: uppercase;
 	padding: 10.9px 20px;
 	text-align: left;
 	font-size: 19.5px;
 	font-family: "Lato", sans-serif;
 	background: #eee;
-	border-left: 5px solid #52c0a7;
+	border-left: 5px solid #bbb;
 	width:80%;
 	transition: .3s ease-in-out;
 }
 
 /* On Hover Functions */
 .groupon-div:hover i {
-	background: #52c0a7;
+	background: #bbb;
 	transition: .3s ease-in-out;
 }
 
 .groupon-div:hover .groupon-btn{
-	border-left: 5px solid #177263;
+	border-left: 5px solid #333;
 }
 
 
 /* groupon modal settings */
 .groupon-pnl a{
-	color:#52c0a7;
+	color:#bbb;
 	transition: .25s ease-in-out;
 }
 
 .groupon-pnl a:hover{
 	text-decoration: none;
-	color: #177263;
+	color: #333;
 	transition: .25s ease-in-out;
 }
 

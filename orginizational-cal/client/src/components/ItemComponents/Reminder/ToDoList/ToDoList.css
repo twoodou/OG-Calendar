@@ -18,12 +18,12 @@
   border:none;
   padding: 11px;
   font-size: 15px;
-  color:#52c0a7;
+  color:#333;
   transition: .2s ease-in-out;
 }
 
 .to-do-list button:hover{
-  color:#177263 ;
+  color:#76966B ;
   transition: .2s ease-in-out;
   cursor: pointer;
 }
@@ -45,7 +45,7 @@
   border:none;
   padding-top: 2px;
   font-size: 15px;
-  color:#177263;
+  color:#bbb;
   transition: .2s ease-in-out;
   background-color: none;
   float: right;
