@@ -6,8 +6,30 @@ const passport = require('passport');
 const session = require('express-session');
 const cookieSession = require('cookie-session');
 const mongoose = require("mongoose");
+const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+
+var Event = require("./")
+
+//needed to be able to talk to the schemas (?)
+mongoose.Promise = Promise;
+
+//???
+var databaseUri = 'mongodb://localhost';
+
+
+//if able to connect to heroku do so, otherwise connect to local database
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI, {
+    useMongoClient: true
+  })
+} else {
+  mongoose.connect(databaseUri, {
+    useMongoClient: true
+  })
+}
 
 // Configure body parser for AJAX requests
 app.use(express.static("client/build"));
