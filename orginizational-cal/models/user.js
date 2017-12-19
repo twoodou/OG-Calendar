@@ -20,21 +20,27 @@ const userSchema = new Schema({
         id: String,
         token: String,
         displayName: String,
-        username: String
+        username: String,
+        twits: String
     },
     linkedin: {
         id: String,
         token: String,
-        displayName: String
+        displayName: String,
+        profile: String,
+        public_page: String
     },
-		watson: {
-			input: String,
-			results: String
-		},
-	date: { type: Date, default: Date.now },
+    meetupEvents: String,
+    googleEvents: {type: Array},
+	watson: {
+		input: String,
+		results: String
+	},
 	location: {type: String},
-  places: {type: String},
-	upcomingEvents: {type: String}
+    places: {type: String},
+	upcomingEvents: {type: String},
+    date: { type: Date, default: Date.now },
+    
 });
 
 // generating a hash

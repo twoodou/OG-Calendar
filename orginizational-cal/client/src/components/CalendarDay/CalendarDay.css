@@ -1,0 +1,17 @@
+
+/* hidden info pannel */
+.calendar-day-pnl {
+	text-align: center;
+	display: none;
+	position: relative;
+	margin-top:2%;
+	width: 97.5%;
+	padding:20px 10px 10px 10px;
+	background: #eee;
+	font-family: "Lato", sans-serif;
+	color: #333;
+	height: 600px;
+}
+
+
+

@@ -1,7 +1,7 @@
 
 /* Icon Div Settings */
 .email-div i{
-	background: #177263;
+	background: #333;
 	padding:12px 12px 13.5px 12px;
 	color:white;
 	font-size: 25px;
@@ -13,24 +13,53 @@
 	list-style-type: none;
 	text-decoration: none;
 	border:none;
-	color:#177263;
+	color:#333;
 	text-transform: uppercase;
 	padding: 10.9px 20px;
 	text-align: left;
 	font-size: 19.5px;
 	font-family: "Lato", sans-serif;
 	background: #eee;
-	border-left: 5px solid #52c0a7;
+	border-left: 5px solid #bbb;
 	width:80%;
 	transition: .3s ease-in-out;
 }
 
 /* On Hover Functions */
-.email-div:hover i {
-	background: #52c0a7;
+.email-comp:hover i {
+	background: #bbb;
 	transition: .3s ease-in-out;
 }
 
-.email-div:hover .email-btn{
-	border-left: 5px solid #177263;
+.email-comp:hover .email-btn{
+	border-left: 5px solid #333;
 }
+
+
+/* email modal settings */
+.email-pnl a{
+	color:#76966B;
+	transition: .25s ease-in-out;
+}
+
+.email-pnl a:hover{
+	text-decoration: none;
+	color: #333;
+	transition: .25s ease-in-out;
+}
+
+/* hidden info pannel */
+.email-pnl {
+	text-align: center;
+  	display: none;
+	position: relative;
+	margin-top:2%;
+	width: 97.5%;
+	padding:20px 10px 10px 10px;
+	background: #eee;
+	font-family: "Lato", sans-serif;
+	color: #333;
+}
+
+
+
