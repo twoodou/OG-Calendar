@@ -1,22 +1,64 @@
-.weather-button{
+
+/* Icon Div Settings */
+.weather-div i{
+	background: #177263;
+	padding:12px 12px 13.6px 12px;
+	color:white;
+	font-size: 25px;
+	margin-top:6%;
+	transition: .3s ease-in-out;
+}
+
+/* Main Button Title #eee */
+.weather-btn{
 	list-style-type: none;
 	text-decoration: none;
 	border:none;
-	padding: 15px 20px;
-	font-size: 18px;
+	color:#177263;
+	text-transform: uppercase;
+	padding: 10.9px 20px;
+	text-align: left;
+	font-size: 19.5px;
+	margin-top: 4%;
 	font-family: "Lato", sans-serif;
 	background: #eee;
-	margin:0% 2% 2% 2%;
-	width:25%;
+	border-left: 5px solid #52c0a7;
+	width:80%;
 	transition: .3s ease-in-out;
 }
 
-.weather-button i{
-	margin-left:20px;
+/* On Hover Functions */
+.weather-div:hover i {
+	background: #52c0a7;
+	transition: .3s ease-in-out;
 }
 
-.weather-button:hover{
-	transition: .3s ease-in-out;
-	background-color: #c2c2c2;
-	color:white;
+.weather-div:hover .weather-btn{
+	border-left: 5px solid #177263;
+}
+
+
+/* email modal settings */
+.weather-pnl a{
+	color:#52c0a7;
+	transition: .25s ease-in-out;
+}
+
+.weather-pnl a:hover{
+	text-decoration: none;
+	color: #177263;
+	transition: .25s ease-in-out;
+}
+
+/* hidden info pannel */
+.weather-pnl {
+	text-align: center;
+  	display: none;
+	position: relative;
+	margin-top:2%;
+	width: 97.5%;
+	padding:20px 10px 10px 10px;
+	background: #eee;
+	font-family: "Lato", sans-serif;
+	color: #333;
 }
