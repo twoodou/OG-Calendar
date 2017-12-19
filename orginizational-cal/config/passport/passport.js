@@ -89,10 +89,16 @@ module.exports = function(app, passport) {
             consumerKey: "77v58mkw7yz9j9",
             consumerSecret: "2GZ4xZuHLGHcMhND",
             callbackURL: "http://127.0.0.1:3001/auth/linkedin/dash",
-            passReqToCallback: true
+            passReqToCallback: true,
+            profileFields: ['id', 'first-name', 'last-name', 'formatted-name', 'location', 'industry', 'current-share', 'summary', 'specialties', 'positions', 'api-standard-profile-request', 'public-profile-url', 'email-address', 'headline']
         }, function(req, token, tokenSecret, profile, done){
             //console.log(req.user);
             console.log(profile);
+            console.log("+++++++++++++++++");
+            console.log(token);
+            console.log("+++++++++++++++++");
+            console.log(tokenSecret);
+
             process.nextTick(function() {
                 if(req.user){
                     User.findById(req.user._id, function(err, usr){
@@ -100,19 +106,17 @@ module.exports = function(app, passport) {
                             return done(err);
                         }
                         if(usr){
-                            if(!usr.linkedin.id){
-                                usr.linkedin.id = profile.id;
-                                usr.linkedin.token = token;
-                                usr.linkedin.displayName = profile.displayName;
+                            usr.linkedin.id = profile.id;
+                            usr.linkedin.token = token;
+                            usr.linkedin.displayName = profile.displayName;
+                            usr.linkedin.profile = JSON.stringify(profile._json);
 
-
-                                usr.save(function(error){
-                                    if(error){
-                                        throw error;
-                                    }
-                                    return done(null, usr);
-                                });
-                            } 
+                            usr.save(function(error){
+                                if(error){
+                                    throw error;
+                                }
+                                return done(null, usr);
+                            });
                         }
                         return done(null, usr);
                     });
@@ -137,20 +141,18 @@ module.exports = function(app, passport) {
                             return done(err);
                         }
                         if(usr){
-                            if(!usr.twitter.id){
-                                usr.twitter.id = profile.id;
-                                usr.twitter.token = token;
-                                usr.twitter.username = profile.username;
-                                usr.twitter.displayName = profile.displayName;
+                            usr.twitter.id = profile.id;
+                            usr.twitter.token = token;
+                            usr.twitter.username = profile.username;
+                            usr.twitter.displayName = profile.displayName;
 
 
-                                usr.save(function(error){
-                                    if(error){
-                                        throw error;
-                                    }
-                                    return done(null, usr);
-                                });
-                            } 
+                            usr.save(function(error){
+                                if(error){
+                                    throw error;
+                                }
+                                return done(null, usr);
+                            });
                         }
                         return done(null, usr);
                     });
