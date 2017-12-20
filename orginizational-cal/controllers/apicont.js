@@ -94,7 +94,7 @@ module.exports = {
     function getEvents() {
       exax.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + loc + '&key=AIzaSyCTEe4so5G2gouCQruBE5SE3b1iatiTjpk').then(function(response){
         var geo = response.data.results[0].geometry.location;
-        //console.log(geo);
+        // console.log(geo);
         exax.get('https://api.meetup.com/find/upcoming_events?&fields=' + list + '&photo-host=public&lon=' + geo.lng + '&lat=' + geo.lat + '&page=20&key=2177251a265c5d6d69c4b171f4e32').then(function(resp){
           var events = resp.data.events;
           var evRes = [];
@@ -334,6 +334,37 @@ module.exports = {
       });
     });
   },
+
+  weather: function(req, res) {
+    // var profile = JSON.parse(req.user.linkedin.profile);
+
+    // var loc = profile.location.name + ", " + profile.location.country.code;
+    // var ind = profile.industry;
+    function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+function showPosition(position) {
+    console.log("Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude);
+}
+    // exax.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + loc + '&key=AIzaSyCTEe4so5G2gouCQruBE5SE3b1iatiTjpk').then(function(response){
+    //     var geo = response.data.results[0].geometry.location;
+    //     console.log(geo);
+  //   var APIKey = "166a433c57516f51dfab1f7edaed8413";
+  //   var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+  //     "q=Bujumbura,Burundi&units=imperial&appid=" + APIKey;
+  //   exax.get('https://www.google.com/search?ei=5F05WoT3B8aP0wK--bfADw&q=weather&oq=weather&gs_l=psy-ab.3..0i71k1l4.0.0.0.569739.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.U0JnlW9BwME')
+  //   .then(function(response){
+  //     console.log(loc);
+  //     res.send(response);
+  // });
+// });
+getLocation();
+},
 
   test: function(req, res) {
     res.status(200).json({msg: "Test Route Works!"});
