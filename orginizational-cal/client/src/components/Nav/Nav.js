@@ -13,28 +13,23 @@ const Nav = (props) =>
 <div>
 {console.log(props)}
 
-  <ul className="nav left-nav">
-    <li className="nav-item navbar-time">
-      <NavTime />
-    </li>
+<ul class="nav left-nav main-nav">
+   <li class="nav-item navbar-time">
+     <NavTime />
+   </li>
 
-    <li className="nav-item navbar-weather">
-      <NavWeather />
-    </li>
-  </ul>
+   <li class="nav-item navbar-weather">
+     <NavWeather />
+   </li>
 
+   <li class="nav-item navbar-name">
+     <NavName name={props.name}/>
+   </li>
 
-  <ul className="nav justify-content-end right-nav main-nav">
-
-    <li className="nav-item navbar-name">
-      <NavName name={props.name} />
-    </li>
-
-    <li className="nav-item navbar-icon">
-      <NavIcon name={props.name}  />
-    </li>
-
-  </ul>
+   <li class="nav-item navbar-icon">
+     <NavIcon name={props.name}/>
+   </li>
+ </ul>
 
   <div className="nav-underline"> </div>
   <div className="nav-triangle"> </div>

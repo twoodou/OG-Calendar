@@ -39,7 +39,7 @@ componentDidMount(){
 
 render(){
   return(
-    <div>
+    <div data-aos="fade-down">
       <Nav
         name={this.state.name}
       />
