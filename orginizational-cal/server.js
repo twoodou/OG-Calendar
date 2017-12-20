@@ -10,25 +10,25 @@ const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
-var Event = require("./")
+/*==============================================================================
+connecting to the events.js section
+===============================================================================*/
+var Event = require("./models/events.js");
 
 //needed to be able to talk to the schemas (?)
 mongoose.Promise = Promise;
 
 //???
-var databaseUri = 'mongodb://localhost';
-
-
+var databaseUri = 'mongodb://localhost/calendar';
 //if able to connect to heroku do so, otherwise connect to local database
 if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI, {
     useMongoClient: true
-  })
+  });
 } else {
   mongoose.connect(databaseUri, {
     useMongoClient: true
-  })
+  });
 }
 
 // Configure body parser for AJAX requests

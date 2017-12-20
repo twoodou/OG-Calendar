@@ -1,17 +1,17 @@
 var mongoose = require('mongoose');
-var schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 // mongoose.connect('mongodb://localhost/test');
 
 const Events = new Schema({
-title:{
+eventName:{
   type: String,
   required: true
 },
-Mirco:{
+eventDate:{
   type: String,
   unique: true
 },
-date:{
+eventInfo:{
   type: Number,
   required: true
 }

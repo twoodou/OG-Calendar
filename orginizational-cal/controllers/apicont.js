@@ -88,7 +88,7 @@ module.exports = {
     var ind = profile.industry;
 
     //console.log(loc);
-    
+
     var events = [];
 
     function getEvents() {
@@ -119,12 +119,15 @@ module.exports = {
           console.log(evRes);
 
           postEvents(evRes);
+          return evRes;
         }).catch(function(error){
           console.log(error);
         });
       }).catch(function(error){
         console.log(error);
       })
+
+
     }
 
     function postEvents(events) {
@@ -192,7 +195,7 @@ module.exports = {
 
         console.log('here 130 api cont');
         res.send(linkProf);
-        
+
         // var link = linkProf.apiStandardProfileRequest;
         // console.log(link);
 
@@ -247,7 +250,7 @@ module.exports = {
       // console.log("=========");
       console.log(input);
 
-      
+
       runNLU(id, input);
       res.redirect('/');
     });
@@ -265,7 +268,7 @@ module.exports = {
       if(keys[i].relevance > 0.667){
         //console.log(keys[i]);
         results.push(keys[i]);
-      } 
+      }
     }
     console.log('here 310');
     //console.log(results);

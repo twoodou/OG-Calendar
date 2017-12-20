@@ -4,7 +4,7 @@ import "./NavIcon.css";
 
 const Modal = ({ show, hide }) => (
   <div style={{ display: show ? 'block' : 'none' }} className='menu-pnl pnl'>
-    <p> fuck yes </p>
+    <p> friggin' yes </p>
   </div>
 )
 
@@ -22,11 +22,11 @@ class NavIcon extends React.Component {
     const display = this.state.displayModal.toString()
     return (
 
-		<div className="nav-icon" onClick= {this.handleOpenModal} > 
+		<div className="nav-icon" onClick= {this.handleOpenModal} >
 			<a onClick={this.handleModalDisplay}>
 
 		 		<button className="nav-brand-icon" type="button">
-		          E
+		         {this.props.letter}
 		        </button>
 		 	</a>
 
@@ -40,5 +40,3 @@ class NavIcon extends React.Component {
 
 
 export default NavIcon;
-
-
