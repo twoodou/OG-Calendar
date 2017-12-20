@@ -6,8 +6,8 @@ import Email from "../components/ItemComponents/Email";
 import Reminder from "../components/ItemComponents/Reminder";
 import Groupon from "../components/ItemComponents/Groupon";
 import Weather from "../components/ItemComponents/Weather";
-import CalendarMonth from "../components/CalendarMonth";
 
+import CalendarMonth from "../components/CalendarMonth/CalendarMonth.js";
 
 
 const calendar = () =>
@@ -22,7 +22,7 @@ const calendar = () =>
 		      	<Weather />
 		    </div>
 		    <div className="col-sm-8" data-aos="fade-left">
-		      	<CalendarMonth />
+		    	<CalendarMonth />
 		    </div>
 		  </div>
 		</div>

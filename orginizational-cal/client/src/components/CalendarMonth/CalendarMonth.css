@@ -1,149 +1,220 @@
-/* #52c0a7 */
-/* #177263 */
-
-/* Blank Div For Cal */
-.cal-div{
+/* main calendar div */
+.calendar-rectangle {
+  position: relative;
+  color: #333;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
   width:100%;
   height:450px;
   margin-right: -5%;
-  background:#eee;
+  background:#fff;
   float: right;
 }
 
-/* Cal Display Settings */
-.vertical-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.row {
-  display: flex;
-  width: 100%;
-}
-
-.calendar {
-  display: block;
-  width: 100%;
+/* main settings */
+.calendar-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   margin-left: 2%;
-  font-size: 1.3rem;
-  text-align: center;
 }
 
-/* Cal Header (month name) */
-.calendar header {
+.main-calendar {
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  cursor: default;
-  font-size: 1.4rem;
-  font-family: "Lato", sans-serif;
-  display: block;
-  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+/* setting the main calendar header */
+.main-calendar .calendar-header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  color: #eee;
+}
+
+/* specific main header (background #333) */
+.main-calendar .calendar-header .title-header {
+  width: 120%;
   text-transform: uppercase;
-  user-select: none;
+  letter-spacing: 1px;
+  height: 60px;
+  font-size: 18px;
+  margin-right: 0%;
+  background-color: #333;
 }
 
-.calendar header .month-display {
-  align-items: center;
-  height: 50px;
-  background: #333;
+/* text for main header */
+.main-calendar .calendar-header .title-header .header-text {
+  flex: 5;
+  display: flex;
+  height: 100%;
 }
 
-.calendar header .month-label {
+/* lable for today */
+.today-label {
   flex: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 15px;
+  transition: .2s ease-in-out;
 }
 
-/* Cal Header (toggle arrows between months) */
-.calendar header .arrow {
-  text-align: center;
-  flex-basis: 15%;
-  font-weight: bold;
+/* on hover for today lable */
+.today-label:hover {
   cursor: pointer;
+  background: #eee;
+  color:#333;
   transition: .2s ease-in-out;
+}
+
+.main-calendar .calendar-header .title-header .header-text .month-label {
+  flex: 3;
+}
+
+/* week day container spacing */
+.days-header, .button-container {
+  width: 120%;
+  margin-right: 0;
+  text-transform: uppercase;
+  height: 45px;
+  color:#333;
+  background-color: #ccc;
+}
+
+/* add new event button */
+.event-button {
+  flex-grow: 1;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* on hover event button */
+.event-button:hover {
+  background-color: #eee;
+  color: #333;
+}
+
+/* main container holding the days */
+.main-calendar .days-container {
+  width: 100%;
+  height: 101%; /* this shit */
+  background: none;
+  margin-top:1.5%;
+  margin-left: .5%;
+  margin-right: -.5%;
+}
+
+.main-calendar .days-container .week {
+  height: 15%;
+}
+
+/* styling for specific days events page */
+.main-calendar .day-events {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  padding:20px;
+  font-size: 17px;
+}
+
+/* specific day events */
+.main-calendar .day-events .event-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  transition: .2s ease-in-out;
+}
+
+/* on hover of day events (to delete) */
+.main-calendar .day-events .event-container:hover {
+  cursor: pointer;
+  color:#76966B;
+  transition: .2s ease-in-out;
+}
+
+
+.main-calendar .day-events .event-container .event-attribute {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
-.calendar header .arrow:hover {
-  background: #bbb;
-  transition: .2s ease-in-out;
-
+/* general row */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Blank Underline Div (light #52c0a7) */
-.cal-underline{
-  height:5px;
-  width:100%;
-  margin-left: -2%;
-  background: #bbb;
-}
-
-/* Cal Week */
-.calendar .week {
-  border-top: solid 1px #CCCCCC;
-}
-
-.calendar .week:first-child {
-  border-top: none;
-}
-
-/* Cal Day Names */
-.calendar .day-names {
-  color: #333;
-  font-weight: bold;
-  cursor: default;
-  font-size: 1.2rem;
-}
-
-.calendar .day-names .day {
-  cursor: default;
-}
-
-.calendar .day-names .day:hover {
-  background: inherit;
-  color:#333;
-}
-
-/* Cal Number Days */
-.calendar .day {
+/* general box */
+.box {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
-  height: 55.6px;
-  color:#333;
-  border-left: solid 1px #CCCCCC;
+  height: 100%;
+  transition: 0.4s ease-in-out 0s;
+}
+
+/* on hover for navigation arrow */
+.box.arrow:hover {
+  background-color: #eee;
   cursor: pointer;
-  transition: .2s ease-in-out; 
+  color: #333;
+  transition: all 0.2s ease-in-out 0s;
 }
 
-.calendar .day:hover {
-  background: #bbb;
-  color:white;
-  transition: .2s ease-in-out;
+/* individual day settings */
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
 }
 
-
-/* Additional Settings */
-.calendar .day:first-child {
-  border-left: none;
+/* day numbers */
+.day .day-number {
+  margin-top:-16%;
+  padding-right:-5%;
+  width: 120%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out 0s;
 }
 
-/* Current Day Settings */
-.calendar .day.today {
-  background: #bbb;
-  color:white;
+/* on hover day numbers */
+.day:hover .day-number {
+  cursor: default;
+  background-color: #eee;
+  transition: 0.2s ease-in-out 0s;
 }
 
-.calendar .day.different-month {
-  color: #C0C0C0;
+/* if the day has events (color change) */
+.day.has-events .day-number {
+  color: #76966B;
+  font-weight: bold;
 }
 
-.calendar .day.selected {
+/* settings for TODAY */
+.day.today .day-number {
   background: #333;
-  color: white;
+  color: #eee;
 }
+
+.day.different-month {
+  opacity: 0.5;
+}
+
