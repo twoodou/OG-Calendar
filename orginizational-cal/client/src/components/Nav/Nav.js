@@ -24,7 +24,7 @@ const Nav = (props) =>
   </ul>
 
 
-  <ul className="nav justify-content-end right-nav">
+  <ul className="nav justify-content-end right-nav main-nav">
 
     <li className="nav-item navbar-name">
       <NavName name={props.name} />

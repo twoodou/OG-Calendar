@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./CalendarDay.css";
-import Day from "../CalendarMonth/CalendarBuild/Day.js";
+// import Day from "../CalendarMonth/CalendarBuild/Day.js";
 
 
 const Modal = ({ show, hide }) => (
@@ -23,13 +23,20 @@ class CalendarDay extends React.Component {
   render() {
     const display = this.state.displayModal.toString()
     return (
-      <div className="calendar-day-comp" onClick= {this.handleOpenModal} >
-			  <a onClick={this.handleModalDisplay} >
-          <Day />
-			  </a>
+      <div>
 
-      <Modal className="calendar-day-pnl pnl" show={this.state.displayModal} hide={this.handleModalDisplay} />
-		</div>
+        <div className="calendar-day-comp" onClick= {this.handleOpenModal}>
+          <a onClick={this.handleModalDisplay} >
+            <p> Day </p>
+          </a>
+        </div>
+
+
+        <div className="throw-modal">
+          <Modal className="calendar-day-pnl pnl" show={this.state.displayModal} hide={this.handleModalDisplay} />
+        </div>
+
+      </div>
     )
   }
 }

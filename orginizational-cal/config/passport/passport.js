@@ -28,6 +28,8 @@ module.exports = function(app, passport) {
         passReqToCallback : true
     }, function(req, token, refreshToken, profile, done){
         process.nextTick(function(){
+            console.log('31 here');
+            console.log(refreshToken);
             if(!req.user){
                 User.findOne({'google.id': profile.id}, function(err, user){
                     if(err){
@@ -36,6 +38,7 @@ module.exports = function(app, passport) {
                     if(user){
                         if(!user.google.token){
                             user.google.token = token;
+                            user.google.ref_token = refreshToken;
                             user.google.name = profile.displayName;
                             user.google.email = profile.emails[0].value;
 
@@ -54,6 +57,7 @@ module.exports = function(app, passport) {
                         newUser.name = profile.displayName
                         newUser.google.id    = profile.id;
                         newUser.google.token = token;
+                        newUser.google.ref_token = refreshToken;
                         newUser.google.name  = profile.displayName;
                         newUser.google.email = profile.emails[0].value; // pull the first email
 
@@ -71,6 +75,7 @@ module.exports = function(app, passport) {
 
                 user.google.id = profile.id;
                 user.google.token = token;
+                user.google.ref_token = refreshToken;
                 user.google.name = profile.displayName;
                 user.google.email = profile.emails[0].value; // pull the first email
 

@@ -10,6 +10,7 @@ import Meetup from "../components/ItemComponents/Meetup";
 import CalendarMonth from "../components/CalendarMonth";
 import CalendarDay from "../components/CalendarDay";
 
+import CalendarMonth from "../components/CalendarMonth/CalendarMonth.js";
 
 class calendar extends Component {
   state = {
@@ -50,8 +51,7 @@ render(){
             <Meetup />
 		    </div>
 		    <div className="col-sm-8" data-aos="fade-left">
-		      	<CalendarMonth />
-
+		    	<CalendarMonth />
 		    </div>
 		   </div>
 		  </div>

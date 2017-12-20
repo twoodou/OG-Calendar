@@ -1,0 +1,19 @@
+.nav-build-item{
+	font-family: "Lato", sans-serif;
+	text-transform: uppercase;
+	font-size: 18px;
+	color:#eee; 
+	transition: .2s ease-in-out; 
+	margin-left:-1%;
+	margin-top:-1.5%;
+}
+
+.nav-link{
+	border:1px solid white;
+}
+
+.nav-build-item:hover{
+	color:#bbb;
+	cursor: pointer;
+	transition: .2s ease-in-out; 
+}
