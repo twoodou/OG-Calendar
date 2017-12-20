@@ -3,8 +3,8 @@
 	background: rgba(34, 34, 34, .65);
 }
 
-
 /* NavTime Settings */
+/* left nav bar items */
 .navbar-time{
 	margin-top:.5%;
 	margin-left: 2%;
@@ -15,12 +15,13 @@
 }
 
 .navbar-name{
-	margin-top: -6%;
 	margin-right: 1.5%;
+	margin-top:.1%;
+	margin-left:40%;
 }
 
 .navbar-icon{
-	margin-top: -4.75%;
+	margin-top:1.5%;
 	margin-right: 2%;
 }
 

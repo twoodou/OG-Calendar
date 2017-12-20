@@ -24,8 +24,8 @@ class NavTime extends Component {
 
 	render (){
 		return (
-			<div className="nav-time"> 
-		 		{ moment().format('LT') }
+			<div className="nav-time">
+		 		{ this.state.time }
 		 	</div>
 		);
 	}

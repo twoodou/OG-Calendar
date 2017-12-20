@@ -2,9 +2,9 @@ import React from "react";
 import "./NavName.css";
 
 
-const NavName = () => 
-	<div className="nav-name"> 
- 		Welcome, Emma Nelson
+const NavName = (props) =>
+	<div className="nav-name">
+ 		{props.name}
  	</div>
 
 export default NavName;
