@@ -31,7 +31,7 @@ const Nav = (props) =>
     </li>
 
     <li className="nav-item navbar-icon">
-      <NavIcon letter={props.letter}  />
+      <NavIcon name={props.name}  />
     </li>
 
   </ul>

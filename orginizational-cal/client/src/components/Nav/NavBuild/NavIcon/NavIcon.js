@@ -26,7 +26,7 @@ class NavIcon extends React.Component {
 			<a onClick={this.handleModalDisplay}>
 
 		 		<button className="nav-brand-icon" type="button">
-		         {this.props.letter}
+		         {this.props.name[0]}
 		        </button>
 		 	</a>
 

@@ -149,11 +149,11 @@
 }
 
 /* general row */
-.row {
+/* .row {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /* general box */
 .box {
@@ -217,4 +217,3 @@
 .day.different-month {
   opacity: 0.5;
 }
-

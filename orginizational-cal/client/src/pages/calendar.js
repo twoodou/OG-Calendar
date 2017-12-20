@@ -7,18 +7,22 @@ import Reminder from "../components/ItemComponents/Reminder";
 import Groupon from "../components/ItemComponents/Groupon";
 import Weather from "../components/ItemComponents/Weather";
 import Meetup from "../components/ItemComponents/Meetup";
-import CalendarMonth from "../components/CalendarMonth";
-import CalendarDay from "../components/CalendarDay";
+// import CalendarMonth from "../components/CalendarMonth";
+// import CalendarDay from "../components/CalendarDay";
 
 import CalendarMonth from "../components/CalendarMonth/CalendarMonth.js";
 
 class calendar extends Component {
   state = {
     time: "hello kevin",
-    name: "Hello Michael",
-    firstLetter:"M",
-    weather: "Sunny :D"
+    name: "Ummm",
+    weather: "Sunny :D",
+    email: "stockemail@gmail.com",
+    show:"show",
+    hide:"hide",
+    reminders: ["wake up", "gyme", "lunch", "meal prep"]
   };
+
 
 componentDidMount(){
   console.log("you worked!");
@@ -38,14 +42,19 @@ render(){
     <div>
       <Nav
         name={this.state.name}
-        letter={this.state.firstLetter}
       />
 
       <div className="container">
 		   <div className="row main-div">
 		    <div className="col-sm-4" data-aos="fade-right">
-		      	<Email />
-		      	<Reminder />
+		      	<Email
+              email ={this.state.email}
+              show = {this.state.show}
+              hide = {this.state.hide}
+            />
+		      	<Reminder
+              reminderList = {this.state.reminders}
+            />
 		      	<Groupon />
 		      	<Weather />
             <Meetup />
