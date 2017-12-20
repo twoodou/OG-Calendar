@@ -129,12 +129,15 @@ module.exports = {
           console.log(evRes);
 
           postEvents(evRes);
+          return evRes;
         }).catch(function(error){
           console.log(error);
         });
       }).catch(function(error){
         console.log(error);
       })
+
+
     }
 
     function postEvents(events) {

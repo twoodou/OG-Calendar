@@ -1,11 +1,11 @@
 var authCont = require('../controllers/authcont.js');
 
 module.exports = function(app, passport) {
-	app.get('/auth/google', passport.authenticate('google', {scope: ['https://www.googleapis.com/auth/calendar', 
+	app.get('/auth/google', passport.authenticate('google', {scope: ['https://www.googleapis.com/auth/calendar',
 		'https://www.googleapis.com/auth/calendar.readonly', 'https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/userinfo.profile',
         'https://www.googleapis.com/auth/userinfo.email'], accessType: 'offline', prompt: 'consent' }), function(req, res){});
 
-	app.get('/auth/google/dash', passport.authenticate('google', 
+	app.get('/auth/google/dash', passport.authenticate('google',
 		{
 			successRedirect: '/',
 			failureRedirect: '/'
@@ -14,7 +14,7 @@ module.exports = function(app, passport) {
 
 	app.get('/auth/twitter', passport.authorize('twitter', {scope: 'email'}));
 
-	app.get('/auth/twitter/dash', passport.authenticate('twitter', 
+	app.get('/auth/twitter/dash', passport.authenticate('twitter',
 		{
 			successRedirect: '/',
 			failureRedirect: '/'
@@ -28,11 +28,11 @@ module.exports = function(app, passport) {
 			res.send(req.user);
 		}
 		console.log(req.user);
-	})
+	});
 
 	app.get('/auth/facebook', passport.authorize('facebook', {scope: ['public_profile', 'email']}), function(req, res){});
 
-	app.get('/auth/facebook/dash', passport.authorize('facebook', 
+	app.get('/auth/facebook/dash', passport.authorize('facebook',
 		{
 			successRedirect: '/',
 			failureRedirect: '/'
@@ -41,7 +41,7 @@ module.exports = function(app, passport) {
 
 	app.get('/auth/linkedin', passport.authorize('linkedin', { scope: ['r_basicprofile', 'r_emailaddress']}), function(req, res){});
 
-	app.get('/auth/linkedin/dash', passport.authenticate('linkedin', 
+	app.get('/auth/linkedin/dash', passport.authenticate('linkedin',
 		{
 			successRedirect: '/',
 			failureRedirect: '/'

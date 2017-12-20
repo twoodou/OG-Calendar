@@ -5,7 +5,7 @@ import "./CalendarDay.css";
 
 const Modal = ({ show, hide }) => (
   <div style={{ display: show ? 'block' : 'none' }} className='calendar-day-pnl pnl'>
-    <p> did it work? </p>
+    <p> YAY LETS GET THIS RESPONSIVE NOW</p>
   </div>
 )
 
@@ -16,6 +16,7 @@ class CalendarDay extends React.Component {
     this.handleModalDisplay = this.handleModalDisplay.bind(this)
   }
   handleModalDisplay(e) {
+    console.log("you made a click");
     e.preventDefault()
     this.setState({ displayModal: !this.state.displayModal })
   }
@@ -39,8 +40,6 @@ class CalendarDay extends React.Component {
     )
   }
 }
-
-
 
 
 export default CalendarDay;

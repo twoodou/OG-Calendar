@@ -12,4 +12,8 @@ module.exports = function(app) {
 	app.post('/api/watRes/:id', apiCont.postNLU);
   	// app.post('/api/meetups/:id', apiCont.getMeetupEvents);
 
+
+		// app.post("/save", function(req, res){
+		// 	console.log(req.body);
+		// });
 };

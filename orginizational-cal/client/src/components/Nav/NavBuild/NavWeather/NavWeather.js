@@ -30,10 +30,11 @@ componentDidUpdate() {
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + this.state.lat + "&lon=" + this.state.lon + "&appid=" + APIKey;
   axios.get(queryURL).then((response) => {
     console.log(response.data.main.temp);
-    var temp = (9 / 5) * (response.data.main.temp-273) - 32;
+    var temp = (parseInt(response.data.main.temp)-273)*1.800+32;
+        var fixedTemp = temp.toFixed(1);
     // var newTemp = (parseInt(response.data.main.temp)-273.15)*1.80;
     this.setState({
-      temperature: (temp*100).toFixed(0),
+      temperature: fixedTemp,
       weather: response.data.weather[0].main,
       city: response.data.name
     });
