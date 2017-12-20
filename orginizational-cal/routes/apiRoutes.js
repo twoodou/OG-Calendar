@@ -11,5 +11,5 @@ module.exports = function(app) {
 	app.get('/api/getGoogleEvents', apiCont.getGoogleEvents);
 	app.post('/api/watRes/:id', apiCont.postNLU);
   	// app.post('/api/meetups/:id', apiCont.getMeetupEvents);
-	
+
 };

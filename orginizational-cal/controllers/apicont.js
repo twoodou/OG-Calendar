@@ -7,7 +7,7 @@ var db = require("../models");
 
 var google = require('googleapis');
 var OAuth2 = google.auth.OAuth2;
- 
+
 var oauth2Client = new OAuth2(
   '368397746508-4kj26rurvv18sgt2at6g89493q3jbi9q.apps.googleusercontent.com',
   'SAIPIsGxN7yV10LVdV6hYcp4',
@@ -98,7 +98,7 @@ module.exports = {
     var ind = profile.industry;
 
     //console.log(loc);
-    
+
     var events = [];
 
     function getEvents() {
@@ -260,7 +260,7 @@ module.exports = {
 
         console.log('here 130 api cont');
         res.send(linkProf);
-        
+
         // var link = linkProf.apiStandardProfileRequest;
         // console.log(link);
 
@@ -315,7 +315,7 @@ module.exports = {
       // console.log("=========");
       console.log(input);
 
-      
+
       runNLU(id, input);
       res.redirect('/');
     });
@@ -333,7 +333,7 @@ module.exports = {
       if(keys[i].relevance > 0.667){
         //console.log(keys[i]);
         results.push(keys[i]);
-      } 
+      }
     }
     console.log('here 310');
     //console.log(results);
@@ -402,6 +402,37 @@ module.exports = {
       });
     });
   },
+
+  weather: function(req, res) {
+    // var profile = JSON.parse(req.user.linkedin.profile);
+
+    // var loc = profile.location.name + ", " + profile.location.country.code;
+    // var ind = profile.industry;
+    function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+function showPosition(position) {
+    console.log("Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude);
+}
+    // exax.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + loc + '&key=AIzaSyCTEe4so5G2gouCQruBE5SE3b1iatiTjpk').then(function(response){
+    //     var geo = response.data.results[0].geometry.location;
+    //     console.log(geo);
+  //   var APIKey = "166a433c57516f51dfab1f7edaed8413";
+  //   var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+  //     "q=Bujumbura,Burundi&units=imperial&appid=" + APIKey;
+  //   exax.get('https://www.google.com/search?ei=5F05WoT3B8aP0wK--bfADw&q=weather&oq=weather&gs_l=psy-ab.3..0i71k1l4.0.0.0.569739.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.U0JnlW9BwME')
+  //   .then(function(response){
+  //     console.log(loc);
+  //     res.send(response);
+  // });
+// });
+getLocation();
+},
 
   test: function(req, res) {
     res.status(200).json({msg: "Test Route Works!"});
