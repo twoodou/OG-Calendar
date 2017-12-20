@@ -4,6 +4,16 @@ var db = require("../models");
 // var request = require("request");
 // var rp = require('request-promise');
 
+
+var google = require('googleapis');
+var OAuth2 = google.auth.OAuth2;
+
+var oauth2Client = new OAuth2(
+  '368397746508-4kj26rurvv18sgt2at6g89493q3jbi9q.apps.googleusercontent.com',
+  'SAIPIsGxN7yV10LVdV6hYcp4',
+  'http://127.0.0.1:3001/dash'
+);
+
 var moment = require('moment');
 var Twitter = require('twitter');
 const util = require('util');
@@ -88,14 +98,14 @@ module.exports = {
     var ind = profile.industry;
 
     //console.log(loc);
-    
+
     var events = [];
 
     function getEvents() {
       exax.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + loc + '&key=AIzaSyCTEe4so5G2gouCQruBE5SE3b1iatiTjpk').then(function(response){
         var geo = response.data.results[0].geometry.location;
-        // console.log(geo);
-        exax.get('https://api.meetup.com/find/upcoming_events?&fields=' + list + '&photo-host=public&lon=' + geo.lng + '&lat=' + geo.lat + '&page=20&key=2177251a265c5d6d69c4b171f4e32').then(function(resp){
+        //console.log(geo);
+        exax.get('https://api.meetup.com/find/upcoming_events?&fields=*&text=' + list + '&photo-host=public&lon=' + geo.lng + '&lat=' + geo.lat + '&page=20&key=2177251a265c5d6d69c4b171f4e32').then(function(resp){
           var events = resp.data.events;
           var evRes = [];
           //console.log(events);
@@ -148,6 +158,64 @@ module.exports = {
     getEvents();
   },
 
+  getGoogleEvents: function(req, res){
+    var googProf = req.user.google;
+    console.log(googProf);
+    oauth2Client.credentials = {
+      access_token: googProf.token,
+      refresh_token: googProf.refresh_token
+    }
+    function getEvents(auth){
+      var calendar = google.calendar('v3');
+      calendar.events.list({
+        auth: auth,
+        calendarId: 'primary',
+        maxResults: 20,
+        singleEvents: true,
+        orderBy: 'startTime'
+      }, function(err, resp){
+        if(err){
+          console.log(err);
+          return;
+        }
+        var events = resp.items;
+        var evRet = [];
+        if(events.length == 0){
+          console.log('nothing planned');
+          return null;
+        }else{
+          console.log('Next 20 events: ');
+          for(var i = 0; i < events.length; i++){
+            var event = events[i];
+            var start = event.start.dateTime || event.start.date;
+            console.log('%s - %s', start, event.summary);
+            evRet.push('%s - %s', start, event.summary);
+          }
+          postEvents(evRet);
+        }
+      });
+    }
+    function postEvents(events) {
+      var id = req.user.id;
+      console.log(id);
+      db.User.findById(id, function(err, usr){
+        if(err){
+          console.log(err);
+        }
+        console.log(req.user);
+        console.log(usr);
+        usr.googleEvents = JSON.stringify(events);
+        usr.save(function(error){
+          if(error){
+            console.log(error);
+          }
+          res.redirect('/');
+        });
+      });
+    }
+    getEvents(oauth2Client);
+  },
+
   getTwits: function(req, res){
     console.log('here 76 cont twitt');
 
@@ -192,7 +260,7 @@ module.exports = {
 
         console.log('here 130 api cont');
         res.send(linkProf);
-        
+
         // var link = linkProf.apiStandardProfileRequest;
         // console.log(link);
 
@@ -247,7 +315,7 @@ module.exports = {
       // console.log("=========");
       console.log(input);
 
-      
+
       runNLU(id, input);
       res.redirect('/');
     });
@@ -265,7 +333,7 @@ module.exports = {
       if(keys[i].relevance > 0.667){
         //console.log(keys[i]);
         results.push(keys[i]);
-      } 
+      }
     }
     console.log('here 310');
     //console.log(results);

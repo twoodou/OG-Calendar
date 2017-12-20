@@ -7,9 +7,9 @@ module.exports = function(app) {
 	app.get('/api/getLink/:id', apiCont.getLink);
 	app.get('/api/getNLU/:id', apiCont.runNLU);
 	app.get('/api/fullSearch', apiCont.getFullSearch);
-	app.get("/api/meetups/:id", apiCont.getMeetupEvents);
-	app.post("/api/watRes/:id", apiCont.postNLU);
-	app.get('/api/weather', apiCont.weather);
-  	// app.post("/api/meetups/:id", apiCont.getMeetupEvents);
-	
+	app.get('/api/meetups/:id', apiCont.getMeetupEvents);
+	app.get('/api/getGoogleEvents', apiCont.getGoogleEvents);
+	app.post('/api/watRes/:id', apiCont.postNLU);
+  	// app.post('/api/meetups/:id', apiCont.getMeetupEvents);
+
 };
