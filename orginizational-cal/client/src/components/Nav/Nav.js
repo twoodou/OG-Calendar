@@ -20,19 +20,14 @@ const Nav = () =>
     <li class="nav-item navbar-weather">
       <NavWeather />
     </li>
-  </ul>
 
-
-  <ul className="nav justify-content-end right-nav main-nav">
-
-    <li className="nav-item navbar-name">
+    <li class="nav-item navbar-name">
       <NavName />
     </li>
 
-    <li className="nav-item navbar-icon">
+    <li class="nav-item navbar-icon">
       <NavIcon />
     </li>
-
   </ul>
 
   <div className="nav-underline"> </div>

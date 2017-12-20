@@ -12,7 +12,10 @@ import CalendarMonth from "../components/CalendarMonth/CalendarMonth.js";
 
 const calendar = () =>
     <div>
-      <Nav />
+    	<div data-aos="fade-down">
+      		<Nav />
+      	</div> 
+
       <div className="container">
 		  <div className="row main-div">
 		    <div className="col-sm-4" data-aos="fade-right">

@@ -9,6 +9,7 @@
   margin-right: -5%;
   background:#fff;
   float: right;
+  overflow: hidden;
 }
 
 /* main settings */
@@ -43,6 +44,7 @@
   height: 60px;
   font-size: 18px;
   margin-right: 0%;
+  margin-left: -3%;
   background-color: #333;
 }
 
@@ -78,6 +80,7 @@
 .days-header, .button-container {
   width: 120%;
   margin-right: 0;
+  margin-left: -3%;
   text-transform: uppercase;
   height: 45px;
   color:#333;
@@ -146,13 +149,6 @@
   overflow: hidden;
   box-sizing: border-box;
   padding: 5px;
-}
-
-/* general row */
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* general box */
