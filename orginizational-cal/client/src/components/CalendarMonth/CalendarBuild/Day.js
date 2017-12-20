@@ -4,23 +4,23 @@ import moment from 'moment';
 
 class Day extends React.Component {
   render() {
-    const {
-      day,
-      day: {
-        date,
-        isCurrentMonth,
-        isToday,
-        number
-      },
-      select,
-      selected
-    } = this.props;
+    let day = this.props.day;
+    let selected = this.props.selected;
+    let select = this.props.select;
 
     return (
-      <span 
-        key={date.toString()} 
-        className={"day" + (isToday ? " today" : "") + (isCurrentMonth ? "" : " different-month") + (date.isSame(selected) ? " selected" : "")} 
-        onClick={() =>select(day)}>{number}</span>
+      <div
+        className={
+          "day" +
+          (day.isToday ? " today" : "") +
+          (day.isCurrentMonth ? "" : " different-month") +
+          (day.date.isSame(selected) ? " selected" : "") +
+          (day.hasEvents ? " has-events" : "")
+        }
+        onClick={() => select(day)}
+      >
+        <div className="day-number">{day.number}</div>
+      </div>
     );
   }
 }

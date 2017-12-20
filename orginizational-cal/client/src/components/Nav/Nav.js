@@ -12,7 +12,7 @@ const Nav = () =>
 
 <div>
 
-  <ul class="nav left-nav">
+  <ul class="nav left-nav main-nav">
     <li class="nav-item navbar-time">
       <NavTime />
     </li>
@@ -23,7 +23,7 @@ const Nav = () =>
   </ul>
 
 
-  <ul className="nav justify-content-end right-nav">
+  <ul className="nav justify-content-end right-nav main-nav">
 
     <li className="nav-item navbar-name">
       <NavName />
